@@ -1,67 +1,165 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Григорий Кручинин — Python Developer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
-
-<header>
-  <img src="AVATAR.jpg" alt="Григорий Кручинин" class="avatar" />
-  <h1>Григорий Кручинин</h1>
-  <p>Middle Python Developer / Team Lead</p>
-</header>
-
-<main>
-<section>
-  <h2>Обо мне</h2>
-  <p>Python-разработчик с опытом создания высоконагруженных систем, автоматизации процессов и управления командами. Люблю чистый код, понятную архитектуру и сложные задачи. Открыт к удалённой работе или релокации (не в Россию).</p>
-</section>
-
-<section>
-  <h2>Навыки</h2>
-  <ul class="skills">
-    <li><strong>Backend:</strong> Python, FastAPI, Django, Flask</li>
-    <li><strong>Automation:</strong> Selenium, Playwright, BeautifulSoup</li>
-    <li><strong>Databases:</strong> PostgreSQL, MySQL, SQLite</li>
-    <li><strong>DevOps:</strong> Docker, CI/CD, AWS</li>
-    <li><strong>Async:</strong> Celery, Redis, Kafka</li>
-    <li><strong>Frontend:</strong> HTML/CSS, JavaScript</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Опыт работы</h2>
-  <div class="job">
-    <h3>LLC BOOSTER GROUP <span>2024 — н.в.</span></h3>
-    <p>Автоматизация регистрации бизнеса в США, обход капч, Telegram-логирование.</p>
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+  <div class="lang-switch">
+    <button id="langRu" class="lang active">RU</button>
+    <button id="langEn" class="lang">EN</button>
   </div>
-  <div class="job">
-    <h3>OnlyFace <span>2022 — 2024</span></h3>
-    <p>Соцсеть с заменой лиц в реальном времени, Stripe, SumSub, соцлогин.</p>
-  </div>
-  <div class="job">
-    <h3>Вангер.рф <span>2021 — 2022</span></h3>
-    <p>Сайты на Django/FastAPI, криптокошелёк, S3-хранилища.</p>
-  </div>
-</section>
 
-<section>
-  <h2>Контакты</h2>
-  <p>Email: <a href="mailto:gkruchinin75@gmail.com">gkruchinin75@gmail.com</a></p>
-  <p>Telegram: <a href="https://t.me/kga_93">@kga_93</a></p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/grigoriy-kruchinin/">linkedin.com/in/grigoriy-kruchinin</a></p>
-</section>
-</main>
+  <header class="hero">
+    <img src="AVATAR.jpg" alt="Григорiy Kruchinin" class="avatar" />
+    <h1 id="name">Григорий Кручинин</h1>
+    <p id="tagline">Middle Python Developer / Team Lead</p>
+    <div class="hero-actions">
+      <a id="downloadResume" class="btn" href="resume.pdf" download>Скачать резюме (PDF)</a>
+      <a id="contactMail" class="btn ghost" href="mailto:gkruchinin75@gmail.com">Написать</a>
+    </div>
+  </header>
 
-<footer>
-  © 2025 Григорий Кручинин
-</footer>
+  <main class="container">
+    <section id="about" class="card">
+      <h2 data-i18n="about_title">Обо мне</h2>
+      <p data-i18n="about_text">
+        Python-разработчик с опытом создания высоконагруженных систем, автоматизации процессов и управления командами. Люблю чистый код, понятную архитектуру и решения, которые дают измеримый результат бизнесу.
+      </p>
+    </section>
 
-<script src="script.js"></script>
+    <section id="skills" class="card">
+      <h2 data-i18n="skills_title">Навыки и стек</h2>
+      <div class="skill-grid">
+        <div class="skill-block">
+          <div class="skill-badge">Backend & Data</div>
+          <ul>
+            <li>Python 3.11+, asyncio, typing</li>
+            <li>FastAPI, Django, DRF</li>
+            <li>SQLAlchemy, Alembic, PostgreSQL</li>
+            <li>GraphQL, gRPC, REST</li>
+            <li>ORM/Query optimization, schema design</li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-badge">Async, Queue & Streaming</div>
+          <ul>
+            <li>Celery, asyncio tasks</li>
+            <li>Redis, RabbitMQ, Kafka</li>
+            <li>Streaming & real-time systems</li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-badge">DevOps & Infra</div>
+          <ul>
+            <li>Docker, Docker Compose, Kubernetes (k8s)</li>
+            <li>CI/CD (GitHub Actions, GitLab CI)</li>
+            <li>Terraform, Prometheus, Grafana, OpenTelemetry, Sentry</li>
+            <li>AWS / GCP / Yandex Cloud, S3-compatible storage</li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-badge">Testing & QA</div>
+          <ul>
+            <li>pytest, unit/integration tests, contract testing</li>
+            <li>Playwright, Selenium, contract & e2e</li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-badge">Automation & Integrations</div>
+          <ul>
+            <li>Web scraping (requests, BeautifulSoup, Playwright)</li>
+            <li>Integration with Stripe, SumSub, OAuth providers</li>
+            <li>Telegram bots (aiogram), email flows, WhatsApp integrations</li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-badge">Tools & Collaboration</div>
+          <ul>
+            <li>Git, GitHub, Notion, Jira, Trello, Figma</li>
+            <li>Code style: black, isort, flake8</li>
+            <li>Documentation & design reviews</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="card">
+      <h2 data-i18n="exp_title">Опыт работы</h2>
+
+      <article class="job">
+        <header>
+          <div class="job-head">
+            <strong>LLCBOOSTER GROUP</strong>
+            <span class="years">2024 — н.в.</span>
+          </div>
+          <div class="job-role">Senior / Lead Python Developer</div>
+          <div class="job-desc">Платформа автоматизации регистрации бизнеса в США и сервисы поддержки операций.</div>
+        </header>
+        <ul class="job-list">
+          <li><strong>Задача:</strong> построить внутренний Helpdesk — единая система обработки входящих сообщений (email, WhatsApp, Telegram) с автоматическим переводом и возможностью отвечать из внутреннего приложения, при этом ответы должны возвращаться в тот же канал.</li>
+          <li><strong>Что сделал:</strong> спроектировал и реализовал микросервисную архитектуру helpdesk, интеграции с почтой/WhatsApp/Telegram, модуль автоматического перевода, очередь задач через RabbitMQ и систему уведомлений — все сообщения централизованно логируются и обрабатываются из единого интерфейса.</li>
+          <li><strong>Результат:</strong> поддержка стала обрабатывать обращения на 60% быстрее, среднее время ответа сократилось в 2.5 раза; уменьшилось количество потерянных обращений.</li>
+
+          <li><strong>Другие задачи:</strong> реализовал надёжный обход hCaptcha / gCaptcha / Cloudflare для парсинга, настроил мониторинг и алерты для парсинг-модулей.</li>
+          <li><strong>Результат:</strong> стабильность парсинга выросла, упало число аварийных падений, доступность сервисов улучшилась на 35%.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <header>
+          <div class="job-head">
+            <strong>OnlyFace (FaceSwapModel)</strong>
+            <span class="years">2022 — 2024</span>
+          </div>
+          <div class="job-role">Tech Lead / Backend Developer</div>
+          <div class="job-desc">Социальная платформа с заменой лиц в реальном времени и монетизацией.</div>
+        </header>
+        <ul class="job-list">
+          <li><strong>Задача:</strong> создать безопасную и масштабируемую платформу для замены лиц в реальном времени с платной подпиской и KYC.</li>
+          <li><strong>Что сделал:</strong> руководил командой, разработал backend (FastAPI), интегрировал Stripe для платежей, подключил SumSub для KYC, внедрил соцавторизацию (Google/Twitter/Telegram), оптимизировал pipeline для обработки видео и real-time потоков.</li>
+          <li><strong>Результат:</strong> запущена монетизация — стабильный доход, сниженный риск мошенничества благодаря KYC, рост регистрации новых пользователей на 40% после упрощённой авторизации.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <header>
+          <div class="job-head">
+            <strong>Вангер.рф</strong>
+            <span class="years">2021 — 2022</span>
+          </div>
+          <div class="job-role">Backend Developer</div>
+          <div class="job-desc">Платформа и игровые продукты с внутренней монетизацией.</div>
+        </header>
+        <ul class="job-list">
+          <li><strong>Задача:</strong> разработать надёжную backend-инфраструктуру для игры и медиахранилища.</li>
+          <li><strong>Что сделал:</strong> разработал систему крипто-кошелька и транзакций, внедрил S3-хранилище (Yandex Cloud), оптимизировал производительность Django/FastAPI сервисов.</li>
+          <li><strong>Результат:</strong> масштабируемое хранение медиа, стабильные транзакции в продукте, повышенная производительность сервиса в пиковые нагрузки.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="contacts" class="card">
+      <h2 data-i18n="contacts_title">Контакты</h2>
+      <p>Email: <a id="mailLink" href="mailto:gkruchinin75@gmail.com">gkruchinin75@gmail.com</a></p>
+      <p>Telegram: <a href="https://t.me/kga_93" target="_blank" rel="noopener">@kga_93</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/grigoriy-kruchinin/" target="_blank" rel="noopener">linkedin.com/in/grigoriy-kruchinin</a></p>
+      <p>GitHub: <a href="https://github.com/GrigoriyKruchinin" target="_blank" rel="noopener">github.com/GrigoriyKruchinin</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="footerYear">2025</span> Григорий Кручинин</small>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
