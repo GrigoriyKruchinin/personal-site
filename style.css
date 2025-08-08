@@ -1,94 +1,95 @@
 :root {
-  --bg: #fff;
-  --text: #111;
+  --bg: #ffffff;
+  --text: #111111;
   --accent: #0071e3;
-  --card-bg: rgba(255, 255, 255, 0.8);
+  --section-bg: #f7f7f7;
 }
 [data-theme="dark"] {
-  --bg: #111;
-  --text: #fff;
+  --bg: #121212;
+  --text: #ffffff;
   --accent: #0a84ff;
-  --card-bg: rgba(30, 30, 30, 0.8);
+  --section-bg: #1e1e1e;
 }
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  transition: background 0.4s, color 0.4s;
+  transition: background 0.3s, color 0.3s;
 }
 header {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background: linear-gradient(180deg, var(--bg) 0%, transparent 100%), url('AVATAR.jpg') center/cover fixed;
   text-align: center;
-}
-header .overlay {
-  position: absolute;
-  top:0;left:0;right:0;bottom:0;
-  background: rgba(0,0,0,0.3);
+  padding: 60px 20px;
 }
 .avatar {
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  z-index: 1;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
-h1, p {
-  z-index: 1;
+h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+main {
+  max-width: 900px;
+  margin: auto;
 }
 section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 60px 20px;
-  background: var(--card-bg);
-  border-radius: 20px;
-  margin-bottom: 40px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease-out;
+  background: var(--section-bg);
+  padding: 40px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  transition: background 0.3s;
 }
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
 }
 .skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  list-style: none;
+  padding: 0;
 }
-.skill-card {
-  padding: 20px;
-  border-radius: 12px;
-  background: var(--bg);
-  color: var(--text);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+.skills li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
-.skill-card:hover {
-  transform: translateY(-5px);
+.job h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.job span {
+  color: var(--accent);
+  font-weight: normal;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 .theme-toggle {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--card-bg);
+  top: 15px;
+  right: 15px;
+  background: var(--section-bg);
   border: none;
-  padding: 10px 15px;
+  padding: 8px 14px;
   border-radius: 20px;
   cursor: pointer;
-  z-index: 1000;
+  font-size: 1rem;
+  transition: background 0.3s;
 }
 footer {
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px;
   font-size: 0.9rem;
   color: #777;
 }
