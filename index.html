@@ -1,118 +1,210 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title data-i18n="page_title">Григорий Кручинин — Python Developer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-theme="dark">
 
-<!-- Панель управления -->
-<div class="control-panel">
-  <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
-  <div class="lang-toggle" onclick="toggleLang()">
-    <div class="lang-slider"></div>
-    <span class="lang-option" id="lang-ru">RU</span>
-    <span class="lang-option" id="lang-en">EN</span>
+  <!-- fixed separate capsules: theme + language -->
+  <div class="control-panel" aria-hidden="false">
+    <!-- theme capsule -->
+    <div class="capsule theme-capsule">
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    </div>
+
+    <!-- language capsule -->
+    <div id="langCapsule" class="capsule lang-capsule" role="group" aria-label="Language switch">
+      <div id="langToggle" class="lang-toggle" tabindex="0" aria-pressed="false">
+        <div class="lang-slider" aria-hidden="true"></div>
+        <span class="lang-opt" data-lang="ru">RU</span>
+        <span class="lang-opt" data-lang="en">EN</span>
+      </div>
+    </div>
   </div>
-</div>
 
-<header>
-  <img src="AVATAR.jpg" alt="Григорий Кручинин" class="avatar" />
-  <h1 data-i18n="name">Григорий Кручинин</h1>
-  <p data-i18n="role">Middle Python Developer / Team Lead</p>
-  <a href="resume.pdf" class="btn" download data-i18n="download_resume">📄 Скачать резюме</a>
-</header>
-
-<main>
-  <section>
-    <h2 data-i18n="skills_title">Навыки</h2>
-    <div class="skills-group">
-      <h3 data-i18n="skills_backend">Backend & Data</h3>
-      <ul>
-        <li>Python, FastAPI, Django, DRF</li>
-        <li>SQLAlchemy, Alembic, PostgreSQL</li>
-        <li>REST, ORM</li>
-      </ul>
+  <header class="hero">
+    <div class="avatar-wrap" aria-hidden="true">
+      <img src="AVATAR.jpg" alt="" class="avatar-img" />
     </div>
 
-    <div class="skills-group">
-      <h3 data-i18n="skills_async">Async & Messaging</h3>
-      <ul>
-        <li>Celery, Redis, RabbitMQ, Kafka</li>
-      </ul>
-    </div>
+    <h1 class="hero-name" data-i18n="name">Григорий Кручинин</h1>
+    <p class="hero-role" data-i18n="role">Lead / Python Developer</p>
 
-    <div class="skills-group">
-      <h3 data-i18n="skills_devops">DevOps & Cloud</h3>
-      <ul>
-        <li>Docker, Docker Compose, Docker Swarm, Kubernetes (k8s)</li>
-        <li>GitHub Actions</li>
-        <li>AWS</li>
-      </ul>
-    </div>
+    <a id="downloadResume" class="btn resume-btn" href="resume.pdf" download data-i18n="download_resume">📄 Скачать резюме</a>
+  </header>
 
-    <div class="skills-group">
-      <h3 data-i18n="skills_testing">Testing, Automation & Integrations</h3>
-      <ul>
-        <li>pytest, unit/integration tests</li>
-        <li>Playwright, Selenium</li>
-        <li>requests, BeautifulSoup</li>
-        <li>Integration with Stripe, SumSub, OAuth providers</li>
-        <li>Telegram bots (aiogram), WhatsApp integrations</li>
-      </ul>
-    </div>
+  <main class="container">
+    <!-- skills -->
+    <section class="card" id="skillsCard">
+      <h2 data-i18n="skills_title">Навыки</h2>
 
-    <div class="skills-group">
-      <h3 data-i18n="skills_tools">Tools & Collaboration</h3>
-      <ul>
-        <li>Git, GitHub, Notion, Jira, Trello, Figma</li>
-        <li>Code style: ruff, black, isort, flake8</li>
-      </ul>
-    </div>
-  </section>
+      <div class="skill-grid">
+        <div class="skill-block reveal">
+          <div class="skill-badge" data-i18n="skills_backend">Backend & Data</div>
+          <ul>
+            <li>Python, FastAPI, Django, DRF</li>
+            <li>SQLAlchemy, Alembic, PostgreSQL</li>
+            <li>REST, ORM</li>
+          </ul>
+        </div>
 
-  <section>
-    <h2 data-i18n="experience_title">Опыт работы</h2>
+        <div class="skill-block reveal">
+          <div class="skill-badge" data-i18n="skills_brokers">Brokers & Async</div>
+          <ul>
+            <li>Celery</li>
+            <li>Redis, RabbitMQ, Kafka</li>
+          </ul>
+        </div>
 
-    <div class="job-card">
-      <h3>LLCBOOSTER GROUP <span>2024 — н.в.</span></h3>
-      <p class="job-role" data-i18n="booster_role">Senior / Lead Python Developer — автоматизация регистрации бизнеса в США</p>
-      <ul>
-        <li data-i18n="booster_task1"><strong>Helpdesk-платформа</strong> — единая система обработки email/WhatsApp/Telegram с автопереводом и ответами из внутреннего приложения.</li>
-        <li data-i18n="booster_task2"><strong>Обход капч</strong> — модуль для hCaptcha/gCaptcha/Cloudflare в Selenium.</li>
-        <li data-i18n="booster_task3"><strong>Автозаполнение PDF</strong> — выбор метода обработки по типу документа.</li>
-        <li data-i18n="booster_task4"><strong>Интеграция Telegram</strong> — уведомления и логирование задач.</li>
-      </ul>
-    </div>
+        <div class="skill-block reveal">
+          <div class="skill-badge" data-i18n="skills_devops">DevOps & Cloud</div>
+          <ul>
+            <li>Docker, Docker Compose, Docker Swarm, Kubernetes (k8s)</li>
+            <li>GitHub Actions</li>
+            <li>AWS</li>
+          </ul>
+        </div>
 
-    <div class="job-card">
-      <h3>FaceSwapModel: OnlyFace <span>2022 — 2024</span></h3>
-      <p data-i18n="onlyface_role">Team Lead / Python Developer — соцсеть с заменой лиц в реальном времени</p>
-      <ul>
-        <li data-i18n="onlyface_task1">Stripe для монетизации</li>
-        <li data-i18n="onlyface_task2">SumSub для KYC</li>
-        <li data-i18n="onlyface_task3">OAuth через Google, Twitter, Telegram</li>
-      </ul>
-    </div>
+        <div class="skill-block reveal">
+          <div class="skill-badge" data-i18n="skills_scraping">Scraping & Integrations</div>
+          <ul>
+            <li>requests, BeautifulSoup, Playwright</li>
+            <li>Integration with Stripe, SumSub, OAuth providers</li>
+            <li>Telegram bots (aiogram), WhatsApp integrations</li>
+          </ul>
+        </div>
 
-    <div class="job-card">
-      <h3>Вангер.рф <span>2021 — 2022</span></h3>
-      <p data-i18n="vanger_role">Python Developer — игровые платформы и веб-приложения</p>
-      <ul>
-        <li data-i18n="vanger_task1">Сайты на Django/FastAPI</li>
-        <li data-i18n="vanger_task2">Криптокошелёк и транзакции</li>
-        <li data-i18n="vanger_task3">S3-хранилища на YandexCloud</li>
-      </ul>
-    </div>
-  </section>
-</main>
+        <div class="skill-block reveal">
+          <div class="skill-badge" data-i18n="skills_testing">Testing & Automation</div>
+          <ul>
+            <li>pytest, unit/integration tests</li>
+            <li>Playwright, Selenium</li>
+          </ul>
+        </div>
 
-<footer>
-  <p>© <span id="year"></span> <span data-i18n="footer_name">Григорий Кручинин</span></p>
-</footer>
+        <div class="skill-block reveal">
+          <div class="skill-badge" data-i18n="skills_tools">Tools & Collaboration</div>
+          <ul>
+            <li>Git, GitHub, Notion, Jira, Trello, Figma</li>
+            <li>Code style: ruff, black, isort, flake8</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <!-- experience -->
+    <section class="card" id="expCard">
+      <h2 data-i18n="experience_title">Опыт работы</h2>
+
+      <!-- LLCBOOSTER -->
+      <article class="job-card reveal" data-key="llc">
+        <div class="job-top">
+          <div class="job-company">LLCBOOSTER GROUP</div>
+          <div class="job-years">2024 — н.в.</div>
+        </div>
+
+        <p class="job-sub" data-i18n="llc_sub">Автоматизация регистрации бизнеса и поддержка операций</p>
+        <p class="job-role" data-i18n="llc_role">Lead / Python Developer</p>
+
+        <div class="tasks">
+          <div class="task-card">
+            <div class="task-title" data-i18n="llc_t1_title">Helpdesk — единая поддержка</div>
+            <div class="task-action" data-i18n="llc_t1_action">Спроектировал и реализовал микросервисную платформу обработки входящих сообщений (email, WhatsApp, Telegram) с автопереводом.</div>
+            <div class="task-result" data-i18n="llc_t1_result">Результат: время ответа поддержки сократилось в 2.5×, обработка запросов ускорилась на 60%.</div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-title" data-i18n="llc_t2_title">Обход капч</div>
+            <div class="task-action" data-i18n="llc_t2_action">Интегрировал надёжный модуль обхода hCaptcha / gCaptcha / Cloudflare в парсинг-пайплайн.</div>
+            <div class="task-result" data-i18n="llc_t2_result">Результат: стабильность парсинга выросла, число падений сервисов снизилось на 35%.</div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-title" data-i18n="llc_t3_title">Автозаполнение PDF</div>
+            <div class="task-action" data-i18n="llc_t3_action">Реализовал систему автоматического заполнения форм с выбором метода обработки по типу документа.</div>
+            <div class="task-result" data-i18n="llc_t3_result">Результат: скорость обработки документов выросла в 2×, снизилось количество ошибок заполнения.</div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-title" data-i18n="llc_t4_title">Интеграция Telegram</div>
+            <div class="task-action" data-i18n="llc_t4_action">Настроил централизованное логирование и уведомления, интегрировал каналы в workflow.</div>
+            <div class="task-result" data-i18n="llc_t4_result">Результат: прозрачность процессов и скорость реакции на ошибки повысились.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- OnlyFace -->
+      <article class="job-card reveal" data-key="onlyface">
+        <div class="job-top">
+          <div class="job-company">FaceSwapModel: OnlyFace</div>
+          <div class="job-years">2022 — 2024</div>
+        </div>
+
+        <p class="job-sub" data-i18n="only_sub">Социальная платформа с заменой лиц в реальном времени</p>
+        <p class="job-role" data-i18n="only_role">Tech Lead / Backend Developer</p>
+
+        <div class="tasks">
+          <div class="task-card">
+            <div class="task-title" data-i18n="only_t1_title">Монетизация</div>
+            <div class="task-action" data-i18n="only_t1_action">Интегрировал Stripe и настроил платежные потоки для подписок.</div>
+            <div class="task-result" data-i18n="only_t1_result">Результат: запущена монетизация и получен устойчивый источник дохода.</div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-title" data-i18n="only_t2_title">KYC</div>
+            <div class="task-action" data-i18n="only_t2_action">Внедрил SumSub для проверки пользователей и снижения мошенничества.</div>
+            <div class="task-result" data-i18n="only_t2_result">Результат: риск мошенничества значительно снижен, доверие пользователей выросло.</div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-title" data-i18n="only_t3_title">Соцавторизация</div>
+            <div class="task-action" data-i18n="only_t3_action">Добавил Google/Twitter/Telegram логин для удобства регистрации.</div>
+            <div class="task-result" data-i18n="only_t3_result">Результат: рост регистраций на 40% после упрощения входа.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Vanger -->
+      <article class="job-card reveal" data-key="vanger">
+        <div class="job-top">
+          <div class="job-company">Вангер.рф</div>
+          <div class="job-years">2021 — 2022</div>
+        </div>
+
+        <p class="job-sub" data-i18n="vanger_sub">Платформа и игровые продукты с внутренней монетизацией</p>
+        <p class="job-role" data-i18n="vanger_role">Backend Developer</p>
+
+        <div class="tasks">
+          <div class="task-card">
+            <div class="task-title" data-i18n="v_t1_title">Крипто-кошелёк</div>
+            <div class="task-action" data-i18n="v_t1_action">Разработал систему кошелька и транзакций для внутриигровых покупок.</div>
+            <div class="task-result" data-i18n="v_t1_result">Результат: стабильные и безопасные транзакции в продукте.</div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-title" data-i18n="v_t2_title">S3-хранилище</div>
+            <div class="task-action" data-i18n="v_t2_action">Интегрировал Yandex Cloud S3 для хранения медиа.</div>
+            <div class="task-result" data-i18n="v_t2_result">Результат: масштабируемое и надежное хранение медиа-файлов.</div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-title" data-i18n="v_t3_title">Оптимизация</div>
+            <div class="task-action" data-i18n="v_t3_action">Оптимизировал сервисы Django/FastAPI под пиковые нагрузки.</div>
+            <div class="task-result" data-i18n="v_t3_result">Результат: уменьшены задержки и улучшена устойчивость под нагрузкой.</div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> <span data-i18n="footer_name">Григорий Кручинин</span></p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

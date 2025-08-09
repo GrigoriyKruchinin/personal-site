@@ -1,166 +1,86 @@
-:root {
-  --bg: #121212;
-  --text: #ffffff;
-  --accent: #0a84ff;
-  --section-bg: #1e1e1e;
+:root{
+  --bg:#0b0f13;
+  --card:#0f1418;
+  --muted:#98a6b2;
+  --text:#e6eef3;
+  --accent:#3dd6d0;
+  --accent-2:#6fb7ff;
+  --radius:12px;
+  --avatar-pos:18%; /* подвинуть изображение вверх: 0% = top, 50% = center */
 }
-[data-theme="light"] {
-  --bg: #ffffff;
-  --text: #111111;
-  --accent: #0071e3;
-  --section-bg: #f7f7f7;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.3s, color 0.3s;
-}
-
-/* Панель управления */
-.control-panel {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  display: flex;
-  gap: 10px;
-  z-index: 1000;
+[data-theme="light"]{
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --muted:#666d74;
+  --text:#0b1720;
+  --accent:#0071e3;
+  --accent-2:#6a3dff;
+  --avatar-pos:35%;
 }
 
-.theme-toggle, .lang-toggle {
-  background: var(--section-bg);
-  border: none;
-  padding: 6px 12px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.3s;
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+  background:var(--bg);color:var(--text);min-height:100vh;transition:background .25s,color .25s;
 }
 
-/* Переключатель языка */
-.lang-toggle {
-  position: relative;
-  width: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-weight: bold;
-}
+/* control panel (separate capsules) */
+.control-panel{position:fixed;top:14px;right:14px;display:flex;gap:10px;z-index:80}
+.capsule{background:var(--card);padding:6px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+.theme-capsule .theme-btn{background:transparent;border:0;color:var(--text);font-size:16px;cursor:pointer;padding:6px 8px}
+.lang-capsule{padding:6px 8px}
+.lang-toggle{position:relative;width:78px;height:32px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 8px;cursor:pointer;user-select:none}
+.lang-slider{position:absolute;left:4px;top:4px;width:32px;height:24px;background:var(--accent);border-radius:999px;transition:transform .28s cubic-bezier(.2,.9,.25,1)}
+.lang-toggle.lang-en .lang-slider{transform:translateX(40px)}
+.lang-opt{position:relative;z-index:1;font-weight:700;color:var(--text);font-size:12px;opacity:.95}
 
-.lang-toggle .lang-slider {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 32px;
-  height: 24px;
-  background: var(--accent);
-  border-radius: 18px;
-  transition: transform 0.3s;
-  z-index: 0;
-}
+/* header */
+.hero{text-align:center;padding:64px 20px 28px}
+.avatar-wrap{width:150px;height:150px;margin:0 auto;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+.avatar-img{width:100%;height:100%;object-fit:cover;object-position:50% var(--avatar-pos);display:block}
+.hero-name{margin:14px 0 6px;font-size:26px}
+.hero-role{margin:0;color:var(--muted)}
+.resume-btn{display:inline-block;margin-top:14px;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#07131a;text-decoration:none;font-weight:700;box-shadow:0 8px 24px rgba(56,210,200,0.07)}
 
-.lang-toggle span {
-  position: relative;
-  z-index: 1;
-  font-size: 0.8rem;
-  color: var(--text);
-}
+/* main layout */
+.container{max-width:1000px;margin:24px auto;padding:0 18px}
+.card{background:var(--card);padding:20px;border-radius:var(--radius);margin-bottom:18px;box-shadow:0 12px 36px rgba(2,6,23,0.45)}
+h2{margin:0 0 12px}
 
-.lang-en-active .lang-slider {
-  transform: translateX(34px);
-}
+/* skill grid */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.skill-block{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);transition:transform .18s ease,box-shadow .18s,background .18s;cursor:default}
+.skill-block:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 26px 44px rgba(2,6,23,0.6)}
+.skill-badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--accent);font-weight:800;margin-bottom:10px;}
 
-/* Хедер */
-header {
-  text-align: center;
-  padding: 60px 20px;
-}
-.avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-}
-h1 {
-  margin: 0;
-  font-size: 2.2rem;
-}
-p {
-  margin: 10px 0;
-  font-size: 1.1rem;
-}
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 18px;
-  border-radius: 8px;
-  background: var(--accent);
-  color: #fff;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-.btn:hover {
-  background: #005bb5;
-}
+/* experience */
+.job-card{margin-top:12px;padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);transition:transform .18s,box-shadow .18s}
+.job-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(2,6,23,0.55)}
+.job-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.job-company{font-weight:800}
+.job-years{color:var(--muted)}
+.job-sub{color:var(--muted);margin-top:8px}
+.job-role{color:var(--accent);margin-top:6px;font-weight:700}
 
-/* Секции */
-main {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
-section {
-  background: var(--section-bg);
-  padding: 30px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  transition: background 0.3s;
-}
-h2 {
-  margin-top: 0;
-}
+/* tasks inside job-card - visual split */
+.tasks{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}
+.task-card{background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);padding:12px;border-radius:10px;display:flex;flex-direction:column;min-height:110px;transition:transform .18s,box-shadow .18s}
+.task-card:hover{transform:translateY(-8px);box-shadow:0 26px 46px rgba(2,6,23,0.55)}
+.task-title{font-weight:800;color:var(--text);margin-bottom:8px}
+.task-action{color:var(--muted);flex:1;line-height:1.45}
+.task-result{margin-top:10px;font-weight:700;color:var(--accent);background:rgba(0,0,0,0.04);padding:6px;border-radius:8px;font-size:13px}
 
-/* Навыки */
-.skills-group h3 {
-  margin-top: 0;
-  color: var(--accent);
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 4px;
-}
-.skills-group ul {
-  list-style: none;
-  padding: 0;
-}
-.skills-group li {
-  padding: 5px 0;
-}
+/* reveal helper - initial hidden then revealed by JS (fallback removes if not supported) */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
-/* Опыт */
-.job-card {
-  margin-bottom: 20px;
-  padding: 15px;
-  background: rgba(255,255,255,0.02);
-  border-radius: 10px;
-}
-.job-card h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-.job-card span {
-  color: var(--accent);
-}
-.job-card ul {
-  padding-left: 20px;
-}
+/* footer */
+footer{text-align:center;padding:22px;color:var(--muted);font-size:13px}
 
-/* Футер */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #aaa;
+/* responsive tweaks */
+@media (max-width:720px){
+  .avatar-wrap{width:120px;height:120px}
+  .lang-toggle{width:70px}
+  .task-card{min-height:90px}
+  .skill-grid{gap:10px}
 }
