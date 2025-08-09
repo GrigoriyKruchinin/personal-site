@@ -235,7 +235,7 @@ body {
 
 /* Выделение результата */
 .task-result {
-  font-style: italic;
+  font-style: normal;
   font-weight: 600;
   color: #00cec9;
 }
@@ -258,13 +258,38 @@ footer {
   opacity: 0.7;
 }
 
+
+/* --- Glassmorphism для блока контактов --- */
+.contacts {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 12px 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
 .contact-icon img {
   width: 28px;
   height: 28px;
+  filter: invert(1) drop-shadow(0 0 2px rgba(255, 255, 255, 0.5)); /* белые иконки */
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .contact-icon:hover img {
   transform: scale(1.2);
-  filter: brightness(1.2);
+  filter: invert(0.8) drop-shadow(0 0 4px rgba(255, 255, 255, 0.7));
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
 }
