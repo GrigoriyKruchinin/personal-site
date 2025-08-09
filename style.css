@@ -270,8 +270,8 @@ footer {
   border-radius: 14px;
   padding: 12px 18px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  width: fit-content; /* ширина по содержимому */
-  margin: 0 auto; /* <-- центрирование блока */
+  width: fit-content;
+  margin: 0 auto 20px;
 }
 
 .contact-icon img {
