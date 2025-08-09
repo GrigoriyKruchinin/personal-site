@@ -101,6 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "Настроил S3-хранилище на YandexCloud для медиафайлов.",
       v_t3_result:
         "Гарантировал масштабируемость и надёжность.",
+
+      // Education
+      education_title: "Образование",
+      education_python_dev: "Python разработчик",
+      education_bachelor: "Бакалавр строительства",
+      courses_title: "Образовательные курсы",
+
       footer_name: "Григорий Кручинин"
     },
 
@@ -179,6 +186,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "Configured S3 storage on YandexCloud for media files.",
       v_t3_result:
         "Guaranteed scalability and reliability.",
+
+      // Education
+      education_title: "Education",
+      education_python_dev: "Python Developer",
+      education_bachelor: "Bachelor of Civil Engineering",
+      courses_title: "Courses",
+
       footer_name: "Grigorii Kruchinin"
     }
   };
