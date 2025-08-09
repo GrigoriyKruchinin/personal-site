@@ -259,7 +259,7 @@ footer {
 }
 
 
-/* --- Glassmorphism для блока контактов --- */
+/* Общие стили */
 .contacts {
   display: flex;
   gap: 15px;
@@ -271,25 +271,28 @@ footer {
   border-radius: 14px;
   padding: 12px 18px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: fit-content; /* <-- теперь ширина по содержимому */
 }
 
+/* Иконки по умолчанию (светлая тема) */
 .contact-icon img {
   width: 28px;
   height: 28px;
-  filter: invert(1) drop-shadow(0 0 2px rgba(255, 255, 255, 0.5)); /* белые иконки */
+  filter: invert(0) brightness(0) contrast(1); /* чёрные для светлой темы */
   transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Тёмная тема */
+@media (prefers-color-scheme: dark) {
+  .contacts {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .contact-icon img {
+    filter: invert(1) brightness(1.2) contrast(1); /* белые иконки для тёмной темы */
+  }
 }
 
 .contact-icon:hover img {
   transform: scale(1.2);
-  filter: invert(0.8) drop-shadow(0 0 4px rgba(255, 255, 255, 0.7));
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 8px;
 }
