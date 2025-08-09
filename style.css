@@ -211,7 +211,8 @@ body {
 /* Skill Grid */
 .skill-grid {
   display: grid;
-  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 }
 
 .skill-block {
@@ -219,6 +220,7 @@ body {
   border-radius: 8px;
   padding: 12px;
   transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 0.95rem;
 }
 
 .skill-block:hover {
@@ -228,8 +230,35 @@ body {
 
 .skill-badge {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   color: var(--accent);
+  display: block;
+  text-align: center;
+}
+
+.skill-block ul {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.skill-block li {
+  margin: 4px 0;
+  opacity: 0.9;
+}
+
+/* Адаптивность: 2 колонки на средних экранах, 1 на маленьких */
+@media (max-width: 768px) {
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Job Experience */
