@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
       skills_tools: "Tools & Collaboration",
       experience_title: "Опыт работы",
 
+      // LLCBOOSTER
+      llc_name: "LLCBOOSTER GROUP",
       llc_sub: "Автоматизация регистрации бизнеса в США и поддержка операций",
       llc_role: "Lead / Python Developer",
       llc_t1_title: "Helpdesk",
@@ -63,6 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
       llc_t4_result:
         "Повысил прозрачность процессов и скорость реакции на инциденты.",
 
+      // OnlyFace
+      only_name: "FaceSwapModel: OnlyFace",
       only_sub: "Социальная платформа с заменой лиц в реальном времени",
       only_role: "Team Lead / Python Developer",
       only_t1_title: "Платежи",
@@ -79,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       only_t3_result:
         "Упростил регистрацию и увеличил число новых пользователей.",
 
+      // Vanger
       vanger_name: "Вангер.рф",
       vanger_sub: "Разработка игровых и веб-платформ",
       vanger_role: "Python Developer",
@@ -116,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
       skills_tools: "Tools & Collaboration",
       experience_title: "Work Experience",
 
+      llc_name: "LLCBOOSTER GROUP",
       llc_sub: "Business registration automation in the US and operations support",
       llc_role: "Lead / Python Developer",
       llc_t1_title: "Helpdesk",
@@ -139,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
       llc_t4_result:
         "Improved process transparency and response speed to incidents.",
 
+      only_name: "FaceSwapModel: OnlyFace",
       only_sub: "Real-time face-swapping social platform",
       only_role: "Team Lead / Python Developer",
       only_t1_title: "Payments",

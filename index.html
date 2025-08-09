@@ -35,23 +35,22 @@
 
     <a id="downloadResume" class="btn resume-btn" href="resume.pdf" download data-i18n="download_resume">📄 Скачать резюме</a>
 
-  <div class="contacts-container">
-    <div class="contacts">
-      <a href="https://t.me/kga_93" target="_blank" class="contact-icon" title="Telegram">
-        <img src="icons/telegram.svg" alt="Telegram">
-      </a>
-      <a href="mailto:gkruchinin75@gmail.com" class="contact-icon" title="Email">
-        <img src="icons/email.svg" alt="Email">
-      </a>
-      <a href="https://github.com/GrigoriyKruchinin" target="_blank" class="contact-icon" title="GitHub">
-        <img src="icons/github.svg" alt="GitHub">
-      </a>
-      <a href="https://linkedin.com/in/grigoriy-kruchinin" target="_blank" class="contact-icon" title="LinkedIn">
-        <img src="icons/linkedin.svg" alt="LinkedIn">
-      </a>
+    <div class="contacts-container">
+      <div class="contacts">
+        <a href="https://t.me/kga_93" target="_blank" class="contact-icon" title="Telegram">
+          <img src="icons/telegram.svg" alt="Telegram">
+        </a>
+        <a href="mailto:gkruchinin75@gmail.com" class="contact-icon" title="Email">
+          <img src="icons/email.svg" alt="Email">
+        </a>
+        <a href="https://github.com/GrigoriyKruchinin" target="_blank" class="contact-icon" title="GitHub">
+          <img src="icons/github.svg" alt="GitHub">
+        </a>
+        <a href="https://linkedin.com/in/grigoriy-kruchinin" target="_blank" class="contact-icon" title="LinkedIn">
+          <img src="icons/linkedin.svg" alt="LinkedIn">
+        </a>
+      </div>
     </div>
-  </div>
-
   </header>
 
   <main class="container">
@@ -128,96 +127,105 @@
 
       <!-- LLCBOOSTER -->
       <article class="job-card reveal" data-key="llc">
-        <div class="job-top">
-          <div class="job-company">LLCBOOSTER GROUP</div>
-          <div class="job-years">2024 — н.в.</div>
+        <div class="job-header">
+          <h3 class="job-company" data-i18n="llc_name">LLCBOOSTER GROUP</h3>
+          <p class="job-years">2024 — н.в.</p>
+          <p class="job-role" data-i18n="llc_role">Lead / Python Developer</p>
+          <p class="job-sub" data-i18n="llc_sub">Автоматизация регистрации бизнеса в США и поддержка операций</p>
         </div>
 
-        <p class="job-sub" data-i18n="llc_sub"></p>
-        <p class="job-role" data-i18n="llc_role"></p>
+        <div class="job-divider"></div>
 
-        <div class="tasks">
-          <div class="task-card">
-            <div class="task-title" data-i18n="llc_t1_title"></div>
-            <div class="task-action" data-i18n="llc_t1_action"></div>
-            <div class="task-result" data-i18n="llc_t1_result"></div>
+        <div class="achievements">
+          <div class="achievement-card">
+            <h4 class="task-title" data-i18n="llc_t1_title">Helpdesk</h4>
+            <p class="task-action" data-i18n="llc_t1_action">Разработал микросервисную систему для обработки сообщений из Email, WhatsApp и Telegram с автоматическим переводом и ответами в исходный канал.</p>
+            <div class="task-result" data-i18n="llc_t1_result">Скорость обработки выросла на 60%, время ответа снизилось в 2.5 раза.</div>
           </div>
-          <div class="task-card">
-            <div class="task-title" data-i18n="llc_t2_title"></div>
-            <div class="task-action" data-i18n="llc_t2_action"></div>
-            <div class="task-result" data-i18n="llc_t2_result"></div>
+
+          <div class="achievement-card">
+            <h4 class="task-title" data-i18n="llc_t2_title">Обход капч</h4>
+            <p class="task-action" data-i18n="llc_t2_action">Интегрировал обход hCaptcha, gCaptcha и Cloudflare в парсинговые модули.</p>
+            <div class="task-result" data-i18n="llc_t2_result">Повысил стабильность парсинга и снизил число сбоев на 35%.</div>
           </div>
-          <div class="task-card">
-            <div class="task-title" data-i18n="llc_t3_title"></div>
-            <div class="task-action" data-i18n="llc_t3_action"></div>
-            <div class="task-result" data-i18n="llc_t3_result"></div>
+
+          <div class="achievement-card">
+            <h4 class="task-title" data-i18n="llc_t3_title">PDF-формы</h4>
+            <p class="task-action" data-i18n="llc_t3_action">Создал модуль автозаполнения PDF-форм для разных форматов документов.</p>
+            <div class="task-result" data-i18n="llc_t3_result">Сократил время заполнения форм и снизил ошибки пользователей.</div>
           </div>
-          <div class="task-card">
-            <div class="task-title" data-i18n="llc_t4_title"></div>
-            <div class="task-action" data-i18n="llc_t4_action"></div>
-            <div class="task-result" data-i18n="llc_t4_result"></div>
+
+          <div class="achievement-card">
+            <h4 class="task-title" data-i18n="llc_t4_title">Telegram интеграция</h4>
+            <p class="task-action" data-i18n="llc_t4_action">Интегрировал Telegram-бота для уведомлений и логирования ошибок.</p>
+            <div class="task-result" data-i18n="llc_t4_result">Повысил прозрачность процессов и скорость реакции на инциденты.</div>
           </div>
         </div>
       </article>
 
       <!-- OnlyFace -->
       <article class="job-card reveal" data-key="onlyface">
-        <div class="job-top">
-          <div class="job-company">FaceSwapModel: OnlyFace</div>
-          <div class="job-years">2022 — 2024</div>
+        <div class="job-header">
+          <h3 class="job-company" data-i18n="only_name">FaceSwapModel: OnlyFace</h3>
+          <p class="job-years">2022 — 2024</p>
+          <p class="job-role" data-i18n="only_role">Team Lead / Python Developer</p>
+          <p class="job-sub" data-i18n="only_sub">Социальная платформа с заменой лиц в реальном времени</p>
         </div>
 
-        <p class="job-sub" data-i18n="only_sub"></p>
-        <p class="job-role" data-i18n="only_role"></p>
+        <div class="job-divider"></div>
 
-        <div class="tasks">
-          <div class="task-card">
-            <div class="task-title" data-i18n="only_t1_title"></div>
-            <div class="task-action" data-i18n="only_t1_action"></div>
-            <div class="task-result" data-i18n="only_t1_result"></div>
+        <div class="achievements">
+          <div class="achievement-card">
+            <h4 class="task-title" data-i18n="only_t1_title">Платежи</h4>
+            <p class="task-action" data-i18n="only_t1_action">Подключил и настроил Stripe для монетизации продукта.</p>
+            <div class="task-result" data-i18n="only_t1_result">Обеспечил стабильный поток дохода.</div>
           </div>
-          <div class="task-card">
-            <div class="task-title" data-i18n="only_t2_title"></div>
-            <div class="task-action" data-i18n="only_t2_action"></div>
-            <div class="task-result" data-i18n="only_t2_result"></div>
+
+          <div class="achievement-card">
+            <h4 class="task-title" data-i18n="only_t2_title">KYC</h4>
+            <p class="task-action" data-i18n="only_t2_action">Интегрировал верификацию через SumSub для защиты от мошенничества.</p>
+            <div class="task-result" data-i18n="only_t2_result">Снизил риск мошенничества и повысил доверие.</div>
           </div>
-          <div class="task-card">
-            <div class="task-title" data-i18n="only_t3_title"></div>
-            <div class="task-action" data-i18n="only_t3_action"></div>
-            <div class="task-result" data-i18n="only_t3_result"></div>
+
+          <div class="achievement-card">
+            <h4 class="task-title" data-i18n="only_t3_title">Соц. аутентификация</h4>
+            <p class="task-action" data-i18n="only_t3_action">Реализовал вход через Google, Twitter и Telegram.</p>
+            <div class="task-result" data-i18n="only_t3_result">Упростил регистрацию и увеличил число новых пользователей.</div>
           </div>
         </div>
       </article>
 
       <!-- Vanger -->
       <article class="job-card reveal" data-key="vanger">
-        <div class="job-top">
-          <div class="job-company" data-i18n="vanger_name">Вангер.рф</div>
-          <div class="job-years">2021 — 2022</div>
+        <div class="job-header">
+          <h3 class="job-company" data-i18n="vanger_name">Вангер.рф</h3>
+          <p class="job-years">2021 — 2022</p>
+          <p class="job-role" data-i18n="vanger_role">Python Developer</p>
+          <p class="job-sub" data-i18n="vanger_sub">Разработка игровых и веб-платформ</p>
         </div>
 
-        <p class="job-sub" data-i18n="vanger_sub"></p>
-        <p class="job-role" data-i18n="vanger_role"></p>
+        <div class="job-divider"></div>
 
-        <div class="tasks">
-          <div class="task-card">
-            <div class="task-title" data-i18n="v_t1_title"></div>
-            <div class="task-action" data-i18n="v_t1_action"></div>
-            <div class="task-result" data-i18n="v_t1_result"></div>
+        <div class="achievements">
+          <div class="achievement-card">
+            <h4 class="task-title" data-i18n="v_t1_title">Веб-разработка</h4>
+            <p class="task-action" data-i18n="v_t1_action">Создавал и поддерживал сайты на Django и FastAPI.</p>
+            <div class="task-result" data-i18n="v_t1_result">Обеспечил стабильность и безопасность.</div>
           </div>
-          <div class="task-card">
-            <div class="task-title" data-i18n="v_t2_title"></div>
-            <div class="task-action" data-i18n="v_t2_action"></div>
-            <div class="task-result" data-i18n="v_t2_result"></div>
+
+          <div class="achievement-card">
+            <h4 class="task-title" data-i18n="v_t2_title">Крипто-кошелёк</h4>
+            <p class="task-action" data-i18n="v_t2_action">Реализовал систему кошелька и транзакций для игровой платформы.</p>
+            <div class="task-result" data-i18n="v_t2_result">Обеспечил безопасное хранение и переводы.</div>
           </div>
-          <div class="task-card">
-            <div class="task-title" data-i18n="v_t3_title"></div>
-            <div class="task-action" data-i18n="v_t3_action"></div>
-            <div class="task-result" data-i18n="v_t3_result"></div>
+
+          <div class="achievement-card">
+            <h4 class="task-title" data-i18n="v_t3_title">Хранилище</h4>
+            <p class="task-action" data-i18n="v_t3_action">Настроил S3-хранилище на YandexCloud для медиафайлов.</p>
+            <div class="task-result" data-i18n="v_t3_result">Гарантировал масштабируемость и надёжность.</div>
           </div>
         </div>
       </article>
-
     </section>
   </main>
 
